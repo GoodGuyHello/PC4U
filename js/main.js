@@ -20,3 +20,12 @@ document.getElementById("show-budget-btn").addEventListener("click", () => {
   box.classList.add("showOption");
 });
 
+async function getGpu(model) {
+  const res = await fetch(`/.netlify/functions/getGpu?model=${model}`);
+  const data = await res.json();
+  console.log(data);
+  return data;
+}
+
+getGpu("RTX 3080");
+
