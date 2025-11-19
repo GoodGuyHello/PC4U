@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC4U</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="layout.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/questions.js" defer></script>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <img src="images/logo2.png" alt="PC4U Logo" class="logo-img">
+        <ul class="nav-links nav-left">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="builds/builds.html">BUILDS</a></li>
+            <li><a href="#shop">SHOP</a></li>
+            <li><a href="#discussion">DISCUSSION</a></li>
+            <li><a href="about/about.html">ABOUT US</a></li>
+            <li><a href="help/help.html">SUPPORT</a></li>
+        </ul>
+        <ul class="nav-links nav-left">
+            <li><a href="login/login.html">LOG IN</a></li>
+            <li><a href="login/login.html">REGISTER</a></li>
+        </ul>
+    </nav>
+
+    <div class="top-banner"></div>
+</header>
+<main class="home-main-content">
+    <div id="intro-wrapper" class="fadeCollapse">
+        <div class="tagline">
+            <div class="tagline-one">SLOW COMPUTER?</div>
+            <div class="tagline-two">WE'LL TELL YOU WHAT TO UPGRADE.</div>
+        </div>
+        <div class="summary">
+            <div class="summary-one">We use your current computer specifications</div>
+            <div class="summary-two">to recommend system upgrades at any budget.</div>
+        </div>
+        <button id="show-budget-btn">Start</button>
+    </div>
+    <div id="hiddenOption" style="display:none;"></div>
+    <section id="questionnaire" class="hidden-questionnaire">
+        <div class="q-step hideOption" data-step="1">
+            <h2 class="q-title">What do you use your computer for?</h2>
+            <div class="q-grid multi">
+                <button class="q-btn">Web Browsing</button>
+                <button class="q-btn">Social Media</button>
+                <button class="q-btn">Work & Productivity</button>
+                <button class="q-btn">Gaming</button>
+                <button class="q-btn">Content Creation</button>
+                <button class="q-btn">School & Studying</button>
+                <button class="q-btn">Programming</button>
+                <button class="q-btn">Online Banking</button>
+                <button class="q-btn">Entertainment</button>
+                <button class="q-btn">File Storage</button>
+            </div>
+            <div class="step-nav">
+                <button class="next-step">Next</button>
+            </div>
+        </div>
+        <div class="q-step hideOption" data-step="2">
+            <h2 id="q2-title" class="q-title">Tell us more about your usage.</h2>
+
+            <div id="q2-options" class="q-grid">
+                <button class="q-btn">Light Use</button>
+                <button class="q-btn">Moderate Use</button>
+                <button class="q-btn">Heavy Use</button>
+            </div>
+
+            <div class="step-nav">
+                <button class="back-step">Back</button>
+                <button class="next-step">Next</button>
+            </div>
+        </div>
+        <div class="q-step hideOption" data-step="3">
+            <h2 class="q-title">How intense is your overall computer usage?</h2>
+
+            <div class="q-grid">
+                <button class="q-btn">Light</button>
+                <button class="q-btn">Moderate</button>
+                <button class="q-btn">Heavy</button>
+                <button class="q-btn">Extreme</button>
+            </div>
+
+            <div class="step-nav">
+                <button class="back-step">Back</button>
+                <button class="next-step">Next</button>
+            </div>
+        </div>
+        <div class="q-step hideOption" data-step="4">
+            <h2 class="q-title">How many tasks do you run at once?</h2>
+            <div class="q-grid">
+                <button class="q-btn">1–2</button>
+                <button class="q-btn">3–5</button>
+                <button class="q-btn">6–10</button>
+                <button class="q-btn">10+</button>
+            </div>
+            <div class="step-nav">
+                <button class="back-step">Back</button>
+                <button class="next-step">Next</button>
+            </div>
+        </div>
+        <div class="q-step hideOption" data-step="5">
+            <h2 class="q-title">What issues are you currently experiencing?</h2>
+
+            <div class="q-grid multi">
+                <button class="q-btn">Slow / Unresponsive</button>
+                <button class="q-btn">Low FPS / Lag</button>
+                <button class="q-btn">Programs Load Slowly</button>
+                <button class="q-btn">Browser Slow w/ Tabs</button>
+                <button class="q-btn">Freezes / Crashes</button>
+                <button class="q-btn">Low Storage</button>
+                <button class="q-btn">Slow File Transfer</button>
+                <button class="q-btn">Rendering Slow</button>
+                <button class="q-btn">Stream Stutter</button>
+                <button class="q-btn">Overheating</button>
+                <button class="q-btn">Slow Boot</button>
+                <button class="q-btn">VMs Run Poorly</button>
+                <button class="q-btn">General Improvement</button>
+            </div>
+            <div class="step-nav">
+                <button class="back-step">Back</button>
+                <button class="next-step">Next</button>
+            </div>
+        </div>
+        <div class="q-step hideOption" data-step="6">
+            <h2 class="q-title">What is your upgrade budget?</h2>
+            <div class="budget-wrapper">
+                <h3 class="budget-label">Choose your upgrade budget:</h3>
+                <input 
+                type="range" 
+                id="budget-slider"
+                class="budget-slider"
+                min="50"
+                max="5000"
+                value="300"
+                step="10"
+    >
+<div class="budget-values">
+        <span class="min-val">$50</span>
+        <span id="budget-display">$300</span>
+        <span class="max-val">$5000</span>
+    </div>
+</div>
+            <div class="step-nav">
+                <button class="back-step">Back</button>
+                <button class="finish-step">Finish</button>
+            </div>
+        </div>
+
+    </section>
+    <div class="info-banner">
+        <div class="card-container">
+            <h1 class="new-pc-header">NEW COMPUTER</h1>
+            <div class="card-one">
+                <img src="images/photocard1.png">
+                <div class="card-one-content">
+                    <h3>BEGINNER BUILD</h3>
+                    <p>Great Entry Build for Gaming and Entertainment</p>
+                </div>
+            </div>
+            <div class="card-two">
+                <img src="images/photocard2.png">
+                <div class="card-two-content">
+                    <h3>ADVANCE BUILD</h3>
+                    <p>More Performance for higher FPS Gaming and Moderate Work</p>
+                </div>
+            </div>
+            <div class="card-three">
+                <img src="images/photocard3.png">
+                <div class="card-three-content">
+                    <h3>PROFESSIONAL BUILD</h3>
+                    <p>For Professional Work in Editing, 3D Rendering, and Gaming</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+</body>
+</html>
